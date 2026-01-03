@@ -77,7 +77,7 @@ const Landing = () => {
 
       {/* Neutral dark overlays instead of strong blue wash */}
       <div className="absolute inset-0 -z-10 bg-slate-950/85" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black via-slate-950/85 to-slate-900/70" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-r from-black via-slate-950/85 to-slate-900/70" />
       {/* Bottom fade to black so it merges into TransitionShowcase */}
      {/* Bottom fade – fade to transparent, not a hard black bar */}
 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 -z-10 bg-linear-to-b from-transparent via-slate-800/11 to-transparent" />
