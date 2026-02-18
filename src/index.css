@@ -164,3 +164,60 @@ svg circle {
     transform: translate(-20%, -10%);
   }
 }
+
+/* Footer light sweep */
+.footer-light::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59, 130, 246, 0.15),
+    transparent
+  );
+  animation: footer-sweep 14s linear infinite;
+}
+
+@keyframes footer-sweep {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(40%);
+  }
+}
+
+.footer-light::before,
+.footer-light::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.18),
+    transparent 60%
+  );
+  animation: footer-light-drift 22s linear infinite;
+}
+
+.footer-light::after {
+  animation-duration: 36s;
+  background: radial-gradient(
+    circle at center,
+    rgba(185, 48, 21, 0.12),
+    transparent 65%
+  );
+}
+
+@keyframes footer-light-drift {
+  0% {
+    transform: translate(-30%, -10%);
+  }
+  50% {
+    transform: translate(30%, 10%);
+  }
+  100% {
+    transform: translate(-30%, -10%);
+  }
+}

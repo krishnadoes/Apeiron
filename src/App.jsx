@@ -17,7 +17,7 @@ function App() {
   const router=createBrowserRouter([
     {
     path:"/",
-    element:<><Navbar/><Landing/><TransitionShowcase/><CollectionsDivider/><Selectedworks/><Collaborators/><Faq/><Footer/></>
+    element:<><Navbar/><Landing/><Collaborators/><Selectedworks/><Faq/><Footer/></>
   },
   // {
   //   path:"/About",
@@ -25,7 +25,7 @@ function App() {
   // },
   {
     path:"/Contact",
-    element:<><Navbar/><Contact/><Footer/></>
+    element:<><Navbar/><Contact/></>
   },
   {
     path:"/Howwework",

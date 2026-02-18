@@ -29,7 +29,7 @@ const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="relative py-28 bg-black">
+    <section className=" h-screen relative py-28 bg-white">
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         {/* Section header */}
         <motion.div
@@ -39,7 +39,7 @@ const Faq = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-[11px] tracking-[0.35em] uppercase text-slate-400">
+          <p className="text-[11px] tracking-[0.35em] uppercase text-slate-800">
             Information
           </p>
           <h2 className="mt-4 text-3xl sm:text-4xl font-light text-black">

@@ -20,17 +20,17 @@ import React, { useState, useEffect } from "react";
 
 const slides = [
   {
-    src: "img2.jpg", // update to your paths
+    src: "land1.jpg", // update to your paths
     label: "Brand Pavilion",
     caption: "Immersive storytelling environments for high-visibility brands.",
   },
   {
-    src: "/landingpage.jpg",
+    src: "/land2.jpg",
     label: "Trade Show Booth",
     caption: "Precise detailing, bold lighting and clear visitor flow.",
   },
   {
-    src: "img3.jpg",
+    src: "land3.jpg",
     label: "Museum Installation",
     caption: "Narrative-driven spaces designed for slow exploration.",
   },
@@ -76,11 +76,11 @@ const Landing = () => {
       </div>
 
       {/* Neutral dark overlays instead of strong blue wash */}
-      <div className="absolute inset-0 -z-10 bg-slate-950/85" />
-      <div className="absolute inset-0 -z-10 bg-linear-to-r from-black via-slate-950/85 to-slate-900/70" />
+      {/* <div className="absolute inset-0 -z-10 bg-slate-950/85" /> */}
+      <div className="absolute inset-0 -z-10 bg-transparent" />
       {/* Bottom fade to black so it merges into TransitionShowcase */}
-     {/* Bottom fade – fade to transparent, not a hard black bar */}
-<div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 -z-10 bg-linear-to-b from-transparent via-slate-800/11 to-transparent" />
+      {/* Bottom fade – fade to transparent, not a hard black bar */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 -z-10 bg-linear-to-b from-transparent via-slate-800/11 to-transparent" />
 
 
       {/* Main content */}
@@ -103,9 +103,8 @@ const Landing = () => {
         <div className="flex-1 flex flex-col lg:flex-row items-center lg:items-end gap-12 lg:gap-16 pb-10">
           {/* Left: Text block */}
           <div
-            className={`flex-1 flex flex-col gap-6 lg:gap-8 transition-all duration-700 ${
-              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
+            className={`flex-1 flex flex-col gap-6 lg:gap-8 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+              }`}
           >
             {/* Tagline */}
             <span className="text-[11px] tracking-[0.35em] uppercase text-slate-400">
@@ -115,15 +114,17 @@ const Landing = () => {
             {/* Main heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-light">
               Where{" "}
-              <span className="font-semibold text-blue-400">spaces</span> become
-              <span className="block mt-1">living stories.</span>
+              <span className="font-semibold text-blue-400">Products <br /></span> Takes
+              <span className="block mt-1">Center stage.</span>
             </h1>
 
             {/* Subtext */}
             <p className="max-w-xl text-sm sm:text-base text-slate-200/85">
-              Aperion collaborates with brands, museums and curators to design
-              and build exhibitions that feel precise, immersive and deeply
-              intentional — from first sketch to final light focus.
+              From startups to established companies,
+              Aperion creates custom exhibition stalls that
+              highlight products, communicate services,
+              and help brands stand out on the exhibition floor.
+
             </p>
 
             {/* CTAs */}
@@ -202,11 +203,10 @@ const Landing = () => {
                       <button
                         key={idx}
                         onClick={() => setActiveIndex(idx)}
-                        className={`h-1.5 w-6 rounded-full transition-all ${
-                          idx === activeIndex
+                        className={`h-1.5 w-6 rounded-full transition-all ${idx === activeIndex
                             ? "bg-blue-400"
                             : "bg-slate-600 hover:bg-slate-400"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>

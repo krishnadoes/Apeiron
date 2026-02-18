@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  "Google",
-  "BMW",
-  "Amazon",
-  "Samsung",
-  "Adobe",
-  "Siemens",
-  "Nike",
-  "Meta",
+ "Custom Structures",
+"Modular Systems",
+"Lighting Frameworks",
+"Graphic Panels",
+"Interactive Displays",
+"Brand Backdrops",
+"Wayfinding Elements",
+"Product Pods"
+
 ];
 
 const Collaborators = () => {
@@ -41,11 +42,14 @@ const Collaborators = () => {
           className="mb-20"
         >
           <p className="text-[11px] tracking-[0.35em] uppercase text-slate-400">
-            Collaborations
+            Exhibition formats we design
+ 
+
+
           </p>
           <h2 className="mt-4 text-3xl sm:text-4xl font-light text-white">
-            Brands that have{" "}
-            <span className="text-blue-400 font-medium">shared our space</span>
+            Custom-built environments{" "}
+            <span className="text-blue-400 font-medium">tailored to different exhibition needs.</span>
           </h2>
         </motion.div>
 

@@ -6,31 +6,31 @@ const steps = [
         title: "Client Brief & Discovery",
         description:
             "Understanding brand goals, audience flow, spatial constraints and exhibition objectives.",
-        image: "/img2.jpg",
+        image: "/clientbreif.webp",
     },
     {
         title: "Concept & Spatial Narrative",
         description:
             "Developing the story, zoning, moodboards and experiential direction.",
-        image: "/img3.jpg",
+        image: "/3d_design2.jpg",
     },
     {
         title: "Design & Visualization",
         description:
             "Detailed layouts, materials, lighting strategy and 3D visualizations.",
-        image: "/landingpage.jpg",
+        image: "/3d_design.jpg",
     },
     {
         title: "Fabrication & Build",
         description:
             "Precision craftsmanship, material sourcing and in-house fabrication.",
-        image: "/img5.avif",
+        image: "/fabrication.jpeg",
     },
     {
         title: "Installation & Handover",
         description:
             "On-site execution, final detailing, lighting focus and walkthrough.",
-        image: "/images/process-5.jpg",
+        image: "/finalproduct.jpg",
     },
 ];
 
