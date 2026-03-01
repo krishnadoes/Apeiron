@@ -60,7 +60,7 @@ const Landing = () => {
   return (
     <section className="relative min-h-screen text-white overflow-hidden">
       {/* Background images with fade animation */}
-      <div className="absolute inset-0 -z-20">
+      {/* <div className="absolute inset-0 -z-20">
         {slides.map((slide, idx) => (
           <img
             key={slide.src}
@@ -73,6 +73,21 @@ const Landing = () => {
             `}
           />
         ))}
+      </div> */}
+
+      <div className="absolute inset-0 -z-20">
+        
+          <img
+          
+            src="land1.jpg"
+            alt= "Brand Pavilion"
+            className={`
+              h-full w-full object-cover absolute inset-0
+              transition-opacity duration-1200 ease-in-out
+              
+            `}
+          />
+      
       </div>
 
       {/* Neutral dark overlays instead of strong blue wash */}

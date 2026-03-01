@@ -34,7 +34,7 @@ const Navbar = () => {
       <nav
         className={`
            top-0 left-0 w-full z-50
-          bg-gradient-to-r bg-black backdrop-blur-md 
+          bg-gradient-to-r  backdrop-blur-md 
           transition-all duration-500  
           ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}
         `}

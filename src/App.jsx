@@ -12,12 +12,12 @@ import TransitionShowcase from './components/TransitionShowcase.jsx'
 import CollectionsDivider from './components/CollectionsDivider.jsx'
 import Howwework from './components/howwework.jsx'
 import Faq from './components/Faq.jsx'
-import Collaborators from './components/Collaborators.jsx'
+import WhyChooseUs from './components/WhyChooseUs.jsx'
 function App() {
   const router=createBrowserRouter([
     {
     path:"/",
-    element:<><Navbar/><Landing/><Collaborators/><Selectedworks/><Faq/><Footer/></>
+    element:<><Navbar/><Landing/><WhyChooseUs/><Selectedworks/><Faq/><Footer/></>
   },
   // {
   //   path:"/About",
