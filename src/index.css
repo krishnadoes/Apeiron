@@ -221,3 +221,19 @@ svg circle {
     transform: translate(-30%, -10%);
   }
 }
+/* Pause carousel on hover */
+.services-carousel:hover {
+  animation-play-state: paused;
+}
+@keyframes service-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.service-scroll {
+  animation: service-scroll 40s linear infinite;
+}

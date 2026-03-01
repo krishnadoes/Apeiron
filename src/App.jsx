@@ -12,6 +12,7 @@ import TransitionShowcase from './components/TransitionShowcase.jsx'
 import CollectionsDivider from './components/CollectionsDivider.jsx'
 import Howwework from './components/howwework.jsx'
 import Faq from './components/Faq.jsx'
+import Services from './components/Services.jsx'
 import WhyChooseUs from './components/WhyChooseUs.jsx'
 function App() {
   const router=createBrowserRouter([
@@ -27,10 +28,21 @@ function App() {
     path:"/Contact",
     element:<><Navbar/><Contact/></>
   },
+ 
   {
     path:"/Howwework",
     element:<><Navbar/><Howwework/><Footer/></>
-  }
+  },
+   {
+      path: "/services",          // ✅ SERVICES ROUTE ADDED
+      element: (
+        <>
+          <Navbar />
+          <Services />
+          <Footer />
+        </>
+      )
+    },
   
   ])
   
