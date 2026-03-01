@@ -22,46 +22,46 @@ const cardVariants = {
 
 const projects = [
   {
-    title: "MOTWANE",
-    type: "Brand Pavilion",
-    location: "Bangalore · India",
-    year: "2024",
-    image: "project1.jpg",
+    title: "SUMITO ELECTRIC",
+    type: "Ifat",
+    location: "Nesco · Mumbai · India",
+    
+    image: "select1.jpg",
   },
   {
     title: "JAYSYNTH",
-    type: "Trade Show Booth",
-    location: "Mumbai · India",
-    year: "2023",
+    type: "Gartex Pro Process Expo",
+    location: "Jio · Hyderbad · India",
+   
     image: "project2.jpg",
   },
   {
-    title: "GENAUPVB",
-    type: "Retail Pop-up",
-    location: "Pune · India",
-    year: "2025",
+    title: "GENAU PVB",
+    type: "Zak Doors and Windows Expo",
+    location: "Nesco · Mumbai · India",
+    
     image: "project3.jpg",
   },
   {
     title: "VASY ERP",
-    type: "Retail Pop-up",
-    location: "Delhi · India",
-    year: "2025",
+    type: "Anuga Foodtech",
+    location: "Nesco · Mumbai · India",
+    
     image: "project4.jpg",
   },
   {
-    title: "HOUSE OF SPARSH",
-    type: "Experience Center",
-    location: "Hyderabad · India",
-    year: "2025",
-    image: "project5.jpg",
+    title: "JISL",
+    type: "Pharma Pro Pack",
+    location: "Hitex · Hyderabad · India",
+    
+    image: "jisl.jpg",
   },
   {
-    title: "NAFEES",
-    type: "Cultural Exhibit",
-    location: "Mumbai · India",
-    year: "2022",
-    image: "project6.jpg",
+    title: "VASY ERP",
+    type: "Cmai",
+    location:  "Nesco · Mumbai · India",
+    
+    image: "vasy.jpg",
   },
 ];
 
@@ -115,10 +115,10 @@ const Selectedworks = () => {
           </motion.h2>
 
           <a
-            href="#"
-            className="hidden sm:inline-flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-blue-700 transition-colors"
+            href="/Services"
+            className="hidden sm:inline-flex items-center gap-2 text-md font-medium text-slate-600 hover:text-blue-700 transition-colors"
           >
-            View full portfolio
+            View Other Projects
             <ArrowUpRight size={14} />
           </a>
         </div>
@@ -160,9 +160,7 @@ const Selectedworks = () => {
                   <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                     {project.title}
                   </h3>
-                  <span className="text-[11px] text-slate-400 whitespace-nowrap mt-0.5">
-                    {project.year}
-                  </span>
+                
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-500">

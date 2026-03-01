@@ -12,25 +12,25 @@ const steps = [
         title: "Concept & Spatial Narrative",
         description:
             "Developing the story, zoning, moodboards and experiential direction.",
-        image: "/3d_design2.jpg",
+        image: "/indian2.png",
     },
     {
-        title: "Design & Visualization",
+        title: "3D-Design & Visualization",
         description:
             "Detailed layouts, materials, lighting strategy and 3D visualizations.",
-        image: "/3d_design.jpg",
+        image: "/indian1.jpg",
     },
     {
         title: "Fabrication & Build",
         description:
             "Precision craftsmanship, material sourcing and in-house fabrication.",
-        image: "/fabrication.jpeg",
+        image: "/fabrications.jpg",
     },
     {
         title: "Installation & Handover",
         description:
             "On-site execution, final detailing, lighting focus and walkthrough.",
-        image: "/finalproduct.jpg",
+        image: "/f1.jpeg",
     },
 ];
 
@@ -51,7 +51,7 @@ const Howwework = () => {
   <div
     className="absolute inset-0 bg-cover bg-center"
     style={{
-      backgroundImage: "url('/bg1.jpg')",
+      backgroundImage: "url('/contact1.jpg')",
       filter: "blur(px)",
           opacity: 1.0,
 
@@ -62,7 +62,7 @@ const Howwework = () => {
   
 
   {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/95" />
+  {/* <div className="absolute inset-0 bg-black/95" /> */}
 
   {/* Atmospheric layers */}
   <div className="absolute inset-0 ambient-lights" />
@@ -81,12 +81,12 @@ const Howwework = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-20"
                 >
-                    <p className="text-[11px] tracking-[0.35em] uppercase text-slate-200">
+                    <p className="text-[15px] tracking-[0.35em] uppercase text-slate-100">
                         Our Process
                     </p>
-                    <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-light text-white max-w-xl">
+                    <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-semibold text-white max-w-xl">
                         From idea to{" "}
-                        <span className="text-blue-400 font-medium">
+                        <span className="text-blue-400 font-bold">
                             immersive reality
                         </span>
                         .
@@ -139,15 +139,15 @@ const Howwework = () => {
                                             <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-slate-400 to-slate-600" />
 
                                             <div className="pl-6">
-                                                <span className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                                                <span className="text-sm uppercase tracking-[0.3em] text-slate-200">
                                                     Step {index + 1}
                                                 </span>
 
-                                                <h3 className="mt-3 text-xl sm:text-2xl font-semibold text-white">
+                                                <h3 className="mt-3 text-2xl sm:text-3xl font-semibold text-white">
                                                     {step.title}
                                                 </h3>
 
-                                                <p className="mt-4 text-sm sm:text-base text-slate-100 leading-relaxed">
+                                                <p className="mt-4 text-md sm:text-lg text-slate-100 leading-relaxed">
                                                     {step.description}
                                                 </p>
                                             </div>

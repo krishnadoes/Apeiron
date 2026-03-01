@@ -5,7 +5,7 @@ import { Plus } from "lucide-react";
 const faqs = [
   {
     q: "How long does a typical exhibition project take?",
-    a: "Project timelines vary based on scale and complexity, but most exhibition projects take between 6 to 12 weeks from initial brief to on-site installation.",
+    a: "Project timelines vary based on scale and complexity, but most exhibition projects take between 6 to 12 days from initial brief to on-site installation.",
   },
   {
     q: "Do you handle both design and fabrication?",
@@ -39,10 +39,10 @@ const Faq = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-[11px] tracking-[0.35em] uppercase text-slate-800">
+          <p className="text-[17px] tracking-[0.35em] uppercase text-slate-800">
             Information
           </p>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-light text-black">
+          <h2 className="mt-4 text-4xl sm:text-5xl font-light text-black">
             Frequently asked{" "}
             <span className="text-blue-400 font-medium">questions</span>
           </h2>
@@ -73,7 +73,7 @@ const Faq = () => {
                   className={`group relative cursor-pointer rounded-2xl border border-slate-700/60 bg-slate-900/60 backdrop-blur-sm px-6 py-5 transition-all`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm sm:text-base font-medium text-white">
+                    <h3 className="text-xl sm:text-lg font-medium text-white">
                       {item.q}
                     </h3>
 
@@ -95,7 +95,7 @@ const Faq = () => {
                         transition={{ duration: 0.4, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                        <p className="mt-4 text-lg leading-relaxed text-slate-300">
                           {item.a}
                         </p>
                       </motion.div>

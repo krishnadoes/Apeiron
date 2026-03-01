@@ -237,3 +237,9 @@ svg circle {
 .service-scroll {
   animation: service-scroll 40s linear infinite;
 }
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}

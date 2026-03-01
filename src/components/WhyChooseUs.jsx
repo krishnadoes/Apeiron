@@ -10,7 +10,7 @@ const features = [
     icon: Compass,
   },
   {
-    title: "End-to-End Execution",
+    title: "IN-House Fabrication & Execution",
     description:
       "From concept sketches to on-site installation, we handle design, fabrication and deployment.",
     icon: Layers,
@@ -52,8 +52,8 @@ const WhyChooseUs = () => {
           transition={{ duration: 1 }}
           className="mb-24 text-center"
         >
-          <p className="text-[11px] tracking-[0.35em] uppercase text-blue-600">
-            Why Choose Us
+          <p className="text-[20px] font-semibold tracking-[0.35em] uppercase text-blue-600">
+            Welcome to Apeiron Exhibition!!!
           </p>
           <h2 className="mt-6 text-4xl sm:text-5xl font-light text-blue-900">
             Built for brands that
@@ -135,11 +135,11 @@ const WhyChooseUs = () => {
                   <Icon size={28} />
                 </motion.div>
 
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="text-xl font-bold text-blue-900">
                   {feature.title}
                 </h3>
 
-                <p className="mt-4 text-blue-700 leading-relaxed">
+                <p className="mt-4 text-lg text-blue-700 leading-relaxed">
                   {feature.description}
                 </p>
 

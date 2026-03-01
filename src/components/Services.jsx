@@ -4,14 +4,14 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 /* ================= PROJECT CAROUSEL ================= */
 
 const carouselServices = [
-  { title: "Gen Au PVB", cover: "/A1.jpeg", gallery: ["/A1.jpeg", "/A2.jpeg"] },
-  { title: "GTF", cover: "/B1.jpeg", gallery: ["/B1.jpeg", "/B2.jpeg", "/B3.jpeg"] },
-  { title: "ETI", cover: "/C1.jpeg", gallery: ["/C1.jpeg", "/C2.jpeg"] },
-  { title: "TECHFAB India", cover: "/D1.jpeg", gallery: ["/D1.jpeg", "/D2.jpeg"] },
-  { title: "Indian Oil", cover: "/F1.jpeg", gallery: ["/F1.jpeg", "/H1.jpeg", "/H2.jpeg", "/I1.jpeg"] },
-  { title: "Halewood", cover: "/G1.jpeg", gallery: ["/G1.jpeg", "/G2.jpeg"] },
-  { title: "MOTWANE", cover: "/H1.jpeg", gallery: ["/H1.jpeg", "/H2.jpeg"] },
-  { title: "KYARI", cover: "/I1.jpeg", gallery: ["/I1.jpeg"] },
+  { title: "GENAU PVB", cover: "/genupwb.jpg", gallery: ["genupwb.jpg","/A1.jpeg", "/A2.jpeg"] },
+  { title: "INDO iRAN", cover: "/indoiran1.jpg", gallery: ["/indoiran1.jpg", "/indoiran2.jpg", "/indoiran3.jpg"] },
+  { title: "ETI", cover: "/etifront.jpg", gallery: ["/etifront.jpg", "/C2.jpeg","/eti1.jpg"] },
+  { title: "TECHFAB India", cover: "/fabtech.jpg", gallery: ["/D1.jpeg", "/D2.jpeg","/fabtech.jpg"] },
+ { title: "ChemicalWeekly", cover: "/chemicalweeklyfront.jpg", gallery: ["/chemicalw1.jpg", "/chemicalweeklyfront.jpg","/chemicalw2.jpg"] },
+
+  { title: "META ENGITECH", cover: "/meta1.jpg", gallery: ["/meta3.jpg", "/meta2.jpg","/meta1.jpg"] },
+  { title: "JISL", cover: "/jisl.jpg", gallery: ["/fabri1.jpg","/jisl.jpg","/jisl1.jpg"] },
 ];
 
 /* ================= CAPABILITIES ================= */
@@ -19,7 +19,7 @@ const carouselServices = [
 const serviceCategories = [
   {
     title: "Design",
-    img: "/A1.jpeg",
+    img: "/design.jpg",
     items: [
       "Exhibition Concept Design",
       "Spatial Layout Planning",
@@ -29,8 +29,8 @@ const serviceCategories = [
     ],
   },
   {
-    title: "Development",
-    img: "/G1.jpeg",
+    title: "Fabrication",
+    img: "/marmik.jpg",
     items: [
       "Exhibition Fabrication",
       "Custom Display Systems",
@@ -40,18 +40,50 @@ const serviceCategories = [
     ],
   },
   {
-    title: "Branding",
-    img: "/B1.jpeg",
+    title: "Printing",
+    img: "/print.jpg",
+    items: [
+      "Large Format Printing",
+      "Backlit & Fabric Graphics",
+      "Vinyl & Surface Branding",
+      "Panel & Standee Production",
+      "Event Collateral Printing",
+    ],
+  },
+  {
+    title: "Graphic Design",
+    img: "/graphic.jpg",
+    items: [
+      "Booth Graphic Design",
+      "Product Display Visuals",
+      "Typography Systems",
+      "Infographic & Content Design",
+      "Exhibition Campaign Creatives",
+    ],
+  },
+  {
+    title: "Website & Digital",
+    img: "/web.jpg",
+    items: [
+      "Exhibition Landing Pages",
+      "Brand Microsites",
+      "Interactive Event Pages",
+      "Product Launch Websites",
+      "Digital Experience Integration",
+    ],
+  },
+  {
+    title: "Branding & Mall Activation",
+    img: "/brand.jpg",
     items: [
       "Exhibition Brand Language",
       "Environmental Graphics",
-      "Signage & Typography Systems",
+      "Signage Systems",
       "Content & Narrative Strategy",
       "Pre-event Visual Identity",
     ],
   },
 ];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -82,7 +114,7 @@ const Services = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="text-center max-w-2xl mx-auto text-slate-500 mb-14 text-sm md:text-base px-4"
+        className="text-center max-w-2xl mx-auto text-slate-500 mb-14 font-semibold text-2xl md:text-xl px-4"
       >
         We craft immersive exhibition experiences that blend design,
         engineering, and storytelling to elevate global brands.
@@ -167,27 +199,80 @@ const Services = () => {
       </AnimatePresence>
 
       {/* ================= CAPABILITIES ================= */}
-      <motion.h2
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="text-center text-3xl md:text-4xl font-light mb-14"
-      >
-        More <span className="font-semibold text-blue-600">Capabilities</span>
-      </motion.h2>
+<section className="relative py-28 overflow-hidden">
 
-      <div className="max-w-6xl mx-auto px-5 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-        {serviceCategories.map((service, index) => (
-          <ServiceCard
-            key={index}
-            service={service}
-            index={index}
-            openIndex={openIndex}
-            setOpenIndex={setOpenIndex}
-          />
-        ))}
-      </div>
+{/* ===== Realistic Exhibition Light Beams ===== */}
+<div className="absolute inset-0 pointer-events-none overflow-hidden">
+
+  {/* Light Beam Left */}
+  <div className="absolute -top-40 left-1/4 w-[300px] h-[800px] rotate-[20deg] bg-gradient-to-b from-blue-300/40 via-blue-200/10 to-transparent blur-3xl opacity-40 animate-lightBeam" />
+
+  {/* Light Beam Right */}
+  <div className="absolute -top-40 right-1/4 w-[300px] h-[800px] rotate-[-20deg] bg-gradient-to-b from-blue-300/40 via-blue-200/10 to-transparent blur-3xl opacity-40 animate-lightBeam delay-[2s]" />
+
+  {/* Subtle atmospheric haze */}
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-100/10 via-transparent to-transparent" />
+
+</div>
+
+  {/* ===== Ambient Blueprint Background ===== */}
+  <div className="absolute inset-0 pointer-events-none">
+    
+    {/* soft blue wash */}
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/60 via-blue-50/30 to-transparent" />
+
+    {/* blurred light */}
+    <div className="absolute -left-40 top-20 w-[500px] h-[500px] bg-blue-900/30 rounded-full blur-[90px]" />
+
+    {/* architectural arcs */}
+    <div className="absolute -right-10 bottom-2 w-[600px] h-[600px] rounded-full border border-blue-900/30" />
+    <div className="absolute left-100 top-1/3 w-[400px] h-[400px] rounded-full border border-blue-800/20" />
+  </div>
+
+  {/* ===== Blueprint Curve Line ===== */}
+  <motion.svg
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    className="absolute inset-0 w-full h-full pointer-events-none"
+  >
+    <motion.path
+      d="M5 40 
+         C30 20, 50 70, 70 45 
+         S90 65, 95 55"
+      stroke="rgba(37,99,235,0.25)"
+      strokeWidth="0.6"
+      fill="none"
+      initial={{ pathLength: 0 }}
+      whileInView={{ pathLength: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+    />
+  </motion.svg>
+
+  {/* ===== Heading ===== */}
+  <motion.h2
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="relative z-10 text-center text-3xl md:text-4xl font-light mb-16"
+  >
+    More <span className="font-semibold text-blue-600">Capabilities</span>
+  </motion.h2>
+
+  {/* ===== Cards Grid ===== */}
+  <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+    {serviceCategories.map((service, index) => (
+      <ServiceCard
+        key={index}
+        service={service}
+        index={index}
+        openIndex={openIndex}
+        setOpenIndex={setOpenIndex}
+      />
+    ))}
+  </div>
+</section>
 
       <div className="h-24" />
     </section>
@@ -207,16 +292,30 @@ const ServiceCard = ({ service, index, openIndex, setOpenIndex }) => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      whileHover={{ y: -6 }}
-      className="w-full max-w-md rounded-3xl overflow-hidden bg-white shadow-lg border border-blue-100 hover:shadow-2xl transition-all duration-300"
+      whileHover={{ y: -8 }}
+      className="group relative w-full rounded-3xl overflow-hidden bg-white shadow-lg border border-blue-100 hover:shadow-2xl transition-all duration-500"
     >
-      <img
-        src={service.img}
-        alt={service.title}
-        className="w-full h-48 md:h-56 object-cover"
-      />
+      {/* Subtle blueprint overlay */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition duration-500 pointer-events-none">
+        <div className="absolute top-4 left-6 w-20 h-px bg-blue-500" />
+        <div className="absolute bottom-6 right-8 w-24 h-px bg-blue-500" />
+        <div className="absolute left-1/2 top-1/4 w-px h-20 bg-blue-500" />
+      </div>
 
-      <div className="p-5 md:p-6 text-center">
+      {/* Image */}
+      <div className="relative overflow-hidden">
+        <img
+          src={service.img}
+          alt={service.title}
+          className="w-full h-52 md:h-56 object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+
+        {/* image depth overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="p-6 text-center relative z-10">
         <h3 className="text-xl md:text-2xl font-medium mb-3 text-blue-700">
           {service.title}
         </h3>
@@ -254,6 +353,24 @@ const ServiceCard = ({ service, index, openIndex, setOpenIndex }) => {
           {isOpen ? "Collapse" : "Explore Capabilities"}
         </motion.button>
       </div>
+
+      {/* hover depth layer */}
+      <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-blue-400/50 transition duration-500" />
     </motion.div>
   );
 };
+
+
+<style>
+{`
+@keyframes lightDrift {
+  0% { transform: translateY(0px) rotate(var(--angle)); }
+  50% { transform: translateY(20px) rotate(var(--angle)); }
+  100% { transform: translateY(0px) rotate(var(--angle)); }
+}
+
+.animate-lightBeam {
+  animation: lightDrift 12s ease-in-out infinite;
+}
+`}
+</style>
