@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
       className="relative py-32 bg-white overflow-hidden"
     >
       {/* Ambient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50/40" />
+      <div className="absolute inset-0 bg-linear-to-br from-blue-50 via-white to-blue-50/40" />
       <div className="absolute -left-40 top-20 w-[600px] h-[600px] rounded-full bg-blue-200/20 blur-3xl" />
       <div className="absolute -right-40 bottom-10 w-[500px] h-[500px] rounded-full bg-blue-300/20 blur-3xl" />
 

@@ -73,7 +73,7 @@ const Selectedworks = () => {
     >
       {/* ===== Ambient Background ===== */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/70 via-blue-50/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-br from-blue-100/70 via-blue-50/40 to-transparent" />
         <div className="absolute -top-40 -right-40 h-[420px] w-[420px] rounded-full bg-blue-200/40 blur-[120px]" />
       </div>
 
@@ -145,7 +145,7 @@ const Selectedworks = () => {
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 
                 <div className="absolute bottom-3 left-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.22em] bg-white/90 text-slate-900">
@@ -180,7 +180,7 @@ const Selectedworks = () => {
               </div>
 
               {/* Subtle Blue Depth Layer */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100/0 via-blue-100/0 to-blue-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="pointer-events-none absolute inset-0 rounded-3xl bg-linear-to-br from-blue-100/0 via-blue-100/0 to-blue-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.article>
           ))}
         </motion.div>

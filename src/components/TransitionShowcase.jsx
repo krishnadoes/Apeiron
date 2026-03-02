@@ -10,7 +10,7 @@ const TransitionShowcase = () => {
       />
 
       {/* subtle dark gradient to bottom so it blends into black band */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent" />
 
       {/* small caption */}
       <div className="absolute left-6 right-6 bottom-6 flex items-center justify-between text-[11px] sm:text-xs text-slate-200/80">
