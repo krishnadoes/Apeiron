@@ -96,7 +96,7 @@ const Services = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-24 md:pt-28 bg-gradient-to-br from-slate-50 via-blue-50 to-white text-slate-800">
+    <section className="relative min-h-screen overflow-hidden pt-24 md:pt-28 bg-linear-to-br from-slate-50 via-blue-50 to-white text-slate-800">
 
       {/* ================= PROJECTS ================= */}
       <motion.h1
@@ -106,7 +106,7 @@ const Services = () => {
         viewport={{ once: true }}
         className="text-center text-4xl md:text-5xl font-light mb-4"
       >
-        Our <span className="font-semibold text-blue-600">Projects</span>
+        <b>Our</b> <span className="font-semibold text-blue-600">Projects</span>
       </motion.h1>
 
       <motion.p
@@ -205,13 +205,13 @@ const Services = () => {
 <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
   {/* Light Beam Left */}
-  <div className="absolute -top-40 left-1/4 w-[300px] h-[800px] rotate-[20deg] bg-gradient-to-b from-blue-300/40 via-blue-200/10 to-transparent blur-3xl opacity-40 animate-lightBeam" />
+  <div className="absolute -top-40 left-1/4 w-[300px] h-[800px] rotate-20 bg-linear-to-b from-blue-300/40 via-blue-200/10 to-transparent blur-3xl opacity-40 animate-lightBeam" />
 
   {/* Light Beam Right */}
-  <div className="absolute -top-40 right-1/4 w-[300px] h-[800px] rotate-[-20deg] bg-gradient-to-b from-blue-300/40 via-blue-200/10 to-transparent blur-3xl opacity-40 animate-lightBeam delay-[2s]" />
+  <div className="absolute -top-40 right-1/4 w-[300px] h-[800px] rotate-[-20deg] bg-linear-to-b from-blue-300/40 via-blue-200/10 to-transparent blur-3xl opacity-40 animate-lightBeam delay-[2s]" />
 
   {/* Subtle atmospheric haze */}
-  <div className="absolute inset-0 bg-gradient-to-b from-blue-100/10 via-transparent to-transparent" />
+  <div className="absolute inset-0 bg-linear-to-b from-blue-100/10 via-transparent to-transparent" />
 
 </div>
 
@@ -219,7 +219,7 @@ const Services = () => {
   <div className="absolute inset-0 pointer-events-none">
     
     {/* soft blue wash */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/60 via-blue-50/30 to-transparent" />
+    <div className="absolute inset-0 bg-linear-to-br from-blue-100/60 via-blue-50/30 to-transparent" />
 
     {/* blurred light */}
     <div className="absolute -left-40 top-20 w-[500px] h-[500px] bg-blue-900/30 rounded-full blur-[90px]" />
@@ -257,7 +257,7 @@ const Services = () => {
     viewport={{ once: true }}
     className="relative z-10 text-center text-3xl md:text-4xl font-light mb-16"
   >
-    More <span className="font-semibold text-blue-600">Capabilities</span>
+    <b>More </b> <span className="font-semibold text-blue-600">Capabilities</span>
   </motion.h2>
 
   {/* ===== Cards Grid ===== */}
@@ -311,7 +311,7 @@ const ServiceCard = ({ service, index, openIndex, setOpenIndex }) => {
         />
 
         {/* image depth overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-blue-900/10 to-transparent" />
       </div>
 
       {/* Content */}
