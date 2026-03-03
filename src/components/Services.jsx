@@ -146,7 +146,7 @@ const Services = () => {
                 animate={prefersReducedMotion ? {} : { y: [0, -6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
-              <div className="h-[22%] flex items-center justify-center text-base md:text-lg font-medium">
+              <div className="h-[22%] flex items-center justify-center text-lg md:text-2xl font-medium">
                 {item.title}
               </div>
             </motion.div>
@@ -316,7 +316,7 @@ const ServiceCard = ({ service, index, openIndex, setOpenIndex }) => {
 
       {/* Content */}
       <div className="p-6 text-center relative z-10">
-        <h3 className="text-xl md:text-2xl font-medium mb-3 text-blue-700">
+        <h3 className="text-2xl md:text-3xl font-medium mb-3 text-blue-700">
           {service.title}
         </h3>
 
@@ -335,9 +335,9 @@ const ServiceCard = ({ service, index, openIndex, setOpenIndex }) => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-center justify-center gap-2"
+                  className="flex text-lg items-center justify-center gap-2"
                 >
-                  <span className="h-1 w-1 rounded-full bg-blue-500" />
+                  <span className="h-1 w-1  rounded-full bg-blue-500" />
                   {item}
                 </motion.li>
               ))}
@@ -348,7 +348,7 @@ const ServiceCard = ({ service, index, openIndex, setOpenIndex }) => {
         <motion.button
           whileTap={{ scale: 0.95 }}
           onClick={() => setOpenIndex(isOpen ? null : index)}
-          className="mt-6 px-5 py-2 rounded-full text-sm bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg transition-all duration-300"
+          className="mt-6 px-5 py-2 rounded-full text-md bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg transition-all duration-300"
         >
           {isOpen ? "Collapse" : "Explore Capabilities"}
         </motion.button>
