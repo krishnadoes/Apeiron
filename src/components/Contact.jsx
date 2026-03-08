@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Instagram, Facebook, Phone, Send } from "lucide-react";
 
+import { MapPin,Mail, Instagram, Facebook, Phone, Send } from "lucide-react";
+import  { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { ToastContainer,toast } from "react-toastify";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,6 +12,8 @@ const Contact = () => {
     message: "",
   });
 
+  const form = useRef();
+  // const [contact, setcontact] = useState({ from_email: "", from_name: "", message: "" })
   const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (e) => {
@@ -17,10 +22,48 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatusMessage(
+     const isValid =
+    formData.email.length > 0 &&
+    formData.name.length > 0 &&
+    formData.message.length > 0;
+    if (isValid) {
+      emailjs.sendForm('service_qecs7yc', 'template_kstozcd', form.current, { publicKey: 'QrFGwt1kLTSviq117', }).then(
+          () => {
+            console.log('Success!');
+            toast('Message mailed successfully!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+            });
+
+            setStatusMessage(
       "Thank you for your message. We’ll connect with you shortly."
     );
     setFormData({ name: "", email: "", message: "" });
+
+          }, (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+        setFormData({ from_email: "", from_name: "", message: "" })
+    } else {
+      toast('Fill the details properly', { 
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+    
   };
 
   return (
@@ -110,16 +153,25 @@ const Contact = () => {
               product brands and large-scale events across India.
             </p>
 
-            <div className="space-y-6 font-semibold cursor-pointer">
-  <InfoItem  icon={Mail} text="apeironexhibition@gmail.com" />
-  <InfoItem icon={Phone} text="+91 7498155141" />
-  <InfoItem icon={Phone} text="+91 8169474676" />
-  
+           <div className="space-y-6 font-semibold">
+
+  <InfoItem icon={Mail} text="apeironexhibition@gmail.com" href="mailto:${apeironexhibition01@gmail.com}" />
+
   <InfoItem
-    href="https://www.instagram.com/apeiron_exhibitiondesign/"
+    icon={Phone}
+    text="+91 7498155141, +91 8169474676"
+    href="tel:+917498155141"
+  />
+
+  <InfoItem
     icon={Instagram}
     text="Follow on Instagram"
+    href="https://www.instagram.com/apeiron_exhibitiondesign/"
   />
+<InfoItem
+  icon={MapPin}
+  text="Mumbai, Maharashtra, India"
+/>
 </div>
           </motion.div>
 
@@ -175,33 +227,21 @@ const Contact = () => {
 /* ===== Helper Components ===== */
 
 const InfoItem = ({ icon: Icon, text, href }) => {
-  const isExternal = href?.startsWith("http");
-  const isEmail = text?.includes("@");
-  const isPhone = text?.includes("+");
-
-  const finalHref =
-    href ||
-    (isEmail
-      ? `mailto:${text}`
-      : isPhone
-      ? `tel:${text.replace(/\s/g, "")}`
-      : "#");
-
   return (
     <a
-      href={finalHref}
-      target={isExternal ? "_blank" : "_self"}
-      rel={isExternal ? "noopener noreferrer" : ""}
+      href={href || "#"}
+      target={href?.startsWith("http") ? "_blank" : "_self"}
+      rel="noopener noreferrer"
       className="flex items-center gap-4 text-blue-800 hover:text-blue-600 transition duration-300 group"
     >
-      <Icon size={45} className="shrink-0 text-white bg-blue-500 rounded-2xl p-2" />
+      <Icon size={22} className="shrink-0" />
+
       <span className="group-hover:underline underline-offset-4">
         {text}
       </span>
     </a>
   );
 };
-
 const FormInput = ({ name, placeholder, value, onChange, type = "text" }) => (
   <input
     type={type}

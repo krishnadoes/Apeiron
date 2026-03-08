@@ -188,10 +188,10 @@ const Selectedworks = () => {
         {/* Mobile CTA */}
         <div className="mt-10 flex justify-end sm:hidden">
           <a
-            href="#"
+            href="/Services"
             className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-blue-700 transition-colors"
           >
-            View full portfolio
+            View Proejcts
             <ArrowUpRight size={14} />
           </a>
         </div>
