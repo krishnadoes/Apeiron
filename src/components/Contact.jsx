@@ -13,60 +13,117 @@ const Contact = () => {
   });
 
   const form = useRef();
-  // const [contact, setcontact] = useState({ from_email: "", from_name: "", message: "" })
-  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //    const isValid =
+  //   formData.email.length > 0 &&
+  //   formData.name.length > 0 &&
+  //   formData.message.length > 0;
+  //   alert(formData)
+  //   if (isValid) {
+  //     emailjs.sendForm('service_qecs7yc', 'template_kstozcd', form.current, { publicKey: 'QrFGwt1kLTSviq117', }).then(
+  //         () => {
+  //           console.log('Success!');
+  //           toast('Message mailed successfully!', {
+  //             position: "top-right",
+  //             autoClose: 5000,
+  //             hideProgressBar: false,
+  //             closeOnClick: true,
+  //             pauseOnHover: true,
+  //             draggable: true,
+  //             progress: undefined,
+  //             theme: "dark",
+  //           });
+
+  //           setStatusMessage("Thank you for your message. We’ll connect with you shortly.");
+  //   setFormData({ name: "", email: "", message: "" });
+
+  //         }, (error) => {
+  //           console.log('FAILED...', error);
+  //         },
+  //       );
+  //       setFormData({ email: "", name: "", message: "" })
+  //   } else {
+  //     toast('Fill the details properly', { 
+  //       position: "top-right",
+  //       autoClose: 5000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: "dark",
+  //     });
+  //   }
+    
+  // };
   const handleSubmit = (e) => {
-    e.preventDefault();
-     const isValid =
+  e.preventDefault();
+
+  const isValid =
     formData.email.length > 0 &&
     formData.name.length > 0 &&
     formData.message.length > 0;
-    if (isValid) {
-      emailjs.sendForm('service_qecs7yc', 'template_kstozcd', form.current, { publicKey: 'QrFGwt1kLTSviq117', }).then(
-          () => {
-            console.log('Success!');
+
+  if (isValid) {
+    emailjs
+      .sendForm(
+        "service_qecs7yc",        // service ID
+        "template_kstozcd",       // template ID
+        form.current,     // IMPORTANT: form element
+        { publicKey: 'QrFGwt1kLTSviq117', }     // public key
+      )
+      .then(
+        () => {
+          console.log('Success!');
             toast('Message mailed successfully!', {
               position: "top-right",
-              autoClose: 5000,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "dark",
+              theme: "light",
             });
 
-            setStatusMessage(
-      "Thank you for your message. We’ll connect with you shortly."
-    );
-    setFormData({ name: "", email: "", message: "" });
+          
 
-          }, (error) => {
-            console.log('FAILED...', error.text);
-          },
-        );
-        setFormData({ from_email: "", from_name: "", message: "" })
-    } else {
-      toast('Fill the details properly', { 
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    }
-    
-  };
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
+  } else {
+    toast("Fill the details properly", {
+      position: "top-right",
+      autoClose: 5000,
+      theme: "dark",
+    });
+  }
+};
 
-  return (
+  return (<>
+     <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition="Bounce"
+      />
+      <ToastContainer />
     <section className="relative min-h-screen pt-32 pb-20 px-4 sm:px-8 lg:px-16   overflow-hidden">
 <div
     className="absolute inset-0 bg-cover bg-center"
@@ -126,13 +183,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Status Message */}
-        {statusMessage && (
-          <div className="bg-blue-50 border border-blue-200 text-blue-700 p-4 rounded-xl mb-10 text-center">
-            {statusMessage}
-          </div>
-        )}
-
+       
         {/* ===== Contact Layout ===== */}
         <div className="grid lg:grid-cols-2 gap-12">
 
@@ -155,7 +206,7 @@ const Contact = () => {
 
            <div className="space-y-6 font-semibold">
 
-  <InfoItem icon={Mail} text="apeironexhibition@gmail.com" href="mailto:${apeironexhibition01@gmail.com}" />
+  <InfoItem icon={Mail} text="apeironexhibition@gmail.com" href="mailto:apeironexhibition@gmail.com" />
 
   <InfoItem
     icon={Phone}
@@ -170,14 +221,15 @@ const Contact = () => {
   />
 <InfoItem
   icon={MapPin}
-  text="Mumbai, Maharashtra, India"
+  text="Factory Address- Avdhoot Bhagwan Ram Seva Ashram, Sr.No.200, Gala No.C-6, Datar Industrial Estate, Pelhar Vasai Palghar - 401208"
 />
 </div>
           </motion.div>
 
           {/* ===== RIGHT FORM ===== */}
           <motion.form
-            onSubmit={handleSubmit}
+  ref={form}
+  onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -208,6 +260,7 @@ const Contact = () => {
               placeholder="Tell us about your exhibition needs..."
               value={formData.message}
               onChange={handleChange}
+              type="text"
             />
 
             <button
@@ -221,6 +274,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
